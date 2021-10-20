@@ -9,7 +9,7 @@ public class FixedCamera : MonoBehaviour {
 
     void Start() {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        offset = transform.position - transform.position; }
+        offset = transform.position - target.position; }
 
     void LateUpdate() {
         Vector3 desiredPosition = transform.position = target.position + offset;
