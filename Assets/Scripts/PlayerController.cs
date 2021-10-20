@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     public int points = 0;
     public Text coins;
     private Vector3 direction;
-    
+
     void Start()
     {
         
@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour {
     void Update() {
         float hInput = Input.GetAxis("Horizontal");
         direction.x = hInput * speed;
-        
-        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
+
+    bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
         direction.y += gravity * Time.deltaTime;
         if (isGrounded) {
             if (Input.GetButtonDown("Jump")) {
