@@ -26,15 +26,26 @@ public class PlayerController : MonoBehaviour {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
 
         if (!isGrounded) {
-            direction.y += gravity * Time.deltaTime; }
+            direction.y += gravity * Time.deltaTime;
+        }
 
         //Move horizontally.
         float hInput = Input.GetAxis("Horizontal");
         direction.x = hInput * speed;
 
         //Jump.
-        if (Input.GetButtonDown("Jump") && isGrounded) {
-            direction.y = (jumpHeight * jumpForce); }
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            direction.y = (jumpHeight * jumpForce);
+        }
+        else
+        {
+            if (gameObject.CompareTag("Red"))
+            {
+                jumpHeight = 0;
+                jumpForce = 0;
+            }
+        }
 
         //Gravity Modifier.
         if (rb.velocity.y < 0) {
@@ -68,4 +79,6 @@ public class PlayerController : MonoBehaviour {
             isGrounded = true;
         }
     }
+    //List of Power Ups.
+
 }
