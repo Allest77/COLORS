@@ -4,13 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Red
-  - Black
   - White
-  - Blue
-  - Pink
-  - Source
   - Collectable
+  - Powerup
   layers:
   - Default
   - TransparentFX
