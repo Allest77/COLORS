@@ -13,10 +13,11 @@ public class PlayerController : MonoBehaviour {
     public bool isGrounded = true, hasPowerup = false;
     public GameObject powerupIndicator;
     private Vector3 direction, gravityNormal, gravityFast;
+    public List<GameObject> listOfPowerups;
 
     Rigidbody rb;
 
-    void Start() { 
+    void Start() {
         rb = GetComponent<Rigidbody>();
         gravityNormal = Physics.gravity;
         gravityFast = gravityNormal * gravityMod; }
@@ -26,17 +27,17 @@ public class PlayerController : MonoBehaviour {
 
         if (!isGrounded) {
             direction.y += gravity * Time.deltaTime; }
-        
+
         //Move horizontally.
         float hInput = Input.GetAxis("Horizontal");
         direction.x = hInput * speed;
 
         //Jump.
-        if(Input.GetButtonDown("Jump") && isGrounded) {
+        if (Input.GetButtonDown("Jump") && isGrounded) {
             direction.y = (jumpHeight * jumpForce); }
 
         //Gravity Modifier.
-        if(rb.velocity.y < 0) {
+        if (rb.velocity.y < 0) {
             Physics.gravity = gravityMod * gravityFast; }
 
         //Move while airbone.
@@ -55,5 +56,16 @@ public class PlayerController : MonoBehaviour {
             hasPowerup = true;
             powerupIndicator.SetActive(true); } }
 
-    //List of Power Ups
+    //Stop the player from jumping up walls w/ ground check collision.
+    void OnCollisionEnter (Collision hit)
+    {
+        if (hit.gameObject.CompareTag("Wall"))
+        {
+            isGrounded = false;
+        }
+        else
+        {
+            isGrounded = true;
+        }
+    }
 }
