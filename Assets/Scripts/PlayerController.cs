@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             direction.y = (jumpHeight * jumpForce);
-            SoundManager.PlaySound("jump");
         }
         else
         {
