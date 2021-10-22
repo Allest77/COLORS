@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartDelay: 1
-  completeLevelUI: {fileID: 0}
+  completeLevelUI: {fileID: 1290480420}
 --- !u!4 &381117523
 Transform:
   m_ObjectHideFlags: 0
@@ -2807,7 +2807,7 @@ GameObject:
   - component: {fileID: 1482498076}
   - component: {fileID: 1482498075}
   - component: {fileID: 1482498074}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: FLOOR (1)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -2934,7 +2934,7 @@ GameObject:
   - component: {fileID: 1714201647}
   - component: {fileID: 1714201646}
   - component: {fileID: 1714201645}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: FLOOR
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -3548,6 +3548,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1110079545, guid: 2de1e10f58cd14641a718b6814bd055e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 381117522}
     - target: {fileID: 4964160891794647299, guid: 2de1e10f58cd14641a718b6814bd055e,
         type: 3}
       propertyPath: m_RootOrder

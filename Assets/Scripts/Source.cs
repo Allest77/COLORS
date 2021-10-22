@@ -7,29 +7,33 @@ public class Source : MonoBehaviour
 {
 
     //NEEDS AN INDICTAOR
-    public PlayerController player;
+    public GameObject pc;
+
+    private PlayerController player;
 
     public List<GameObject> powerUps;
-    public GameObject currentPowerUp, pickupEffect, blueBlock;
+    public GameObject currentPowerUp; //pickupEffect, blueBlock;
     public float jumpMultiplier = 1.5f;
 
     private void Awake() //Awake happens before start.
     {
-        player = GameObject.FindObjectOfType<PlayerController>(); //public variable player is a short name to access playercontroller script.
+        player = pc.GetComponent<PlayerController>();
+
+        //player = GameObject.FindObjectOfType<PlayerController>(); //public variable player is a short name to access playercontroller script.
         //blueBlock = FindGameObjectWithTag("BLUE BLOCK").GetComponent<BoxCollider>(); //We need to find the solid blue obj's collider.
     }
 
     void Update()
     {
         transform.Rotate(0, 0, 90 * Time.deltaTime);
-        if (player.hasDoubleJump)
+        /*if (player.hasDoubleJump)
         {
             player.hasBlue = false;
             player.hasYellow = false;
             player.hasWhite = false;
             //place functionality here:
             player.jumpHeight = 6;
-        }
+        } */
 
         if (player.hasBlue)
         {

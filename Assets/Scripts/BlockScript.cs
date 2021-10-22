@@ -45,6 +45,8 @@ public class BlockScript : MonoBehaviour
             player.hasDoubleJump = false;
             player.hasBlue = false;
             player.hasWhite = false;
+            player.jumpHeight = 2.66f;
+            Debug.Log("wtf");
             //place functionality here:
         }
     }

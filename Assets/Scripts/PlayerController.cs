@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     //Reference Sound Manager
     public SoundManager jump;
     public CharacterController controller;
-    public float speed = 8f, jumpHeight = 2.66f, jumpForce = 20, gravity = -20.0f, groundDistance = 0.4f, gravityMod = 4;
+    public float speed = 8f, jumpHeight = 2.66f, originalJumpHeight, jumpForce = 20, gravity = -20.0f, groundDistance = 0.4f, gravityMod = 4;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public int points = 0;
@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction, gravityNormal, gravityFast;
     public List<GameObject> listOfPowerups;
 
+    public Text timer;
+    private TimerController time;
+
     Rigidbody rb;
 
     void Start()
@@ -26,6 +29,8 @@ public class PlayerController : MonoBehaviour
         gravityNormal = Physics.gravity;
         gravityFast = gravityNormal * gravityMod;
         jump = GameObject.FindObjectOfType<SoundManager>();
+        originalJumpHeight = jumpHeight;
+        time = timer.GetComponent<TimerController>();
     }
 
     void Update()
@@ -45,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             direction.y = (jumpHeight * jumpForce);
+            Debug.Log("Jumping");
         }
         else
         {
@@ -74,32 +80,42 @@ public class PlayerController : MonoBehaviour
     //Obtain Power Up
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Triggered!");
+
         if (other.gameObject.CompareTag("Pink"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             hasDoubleJump = true;
+            jumpHeight = 6;
+            hasYellow = false;
             powerupIndicator.SetActive(true);
+            Debug.Log("Entered Pink!");
         }
 
         if (other.gameObject.CompareTag("Blue"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             hasBlue = true;
             powerupIndicator.SetActive(true);
+            jumpHeight = originalJumpHeight;
+            Debug.Log(jumpHeight);
         }
 
         if (other.gameObject.CompareTag("Yellow"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             hasYellow = true;
             powerupIndicator.SetActive(true);
+            jumpHeight = originalJumpHeight;
+            Debug.Log(jumpHeight);
         }
 
         if (other.gameObject.CompareTag("White"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             hasWhite = true;
             powerupIndicator.SetActive(true);
+            jumpHeight = originalJumpHeight;
         }
     }
 
@@ -116,5 +132,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     //List of Power Ups.
+
+    //time.EndTimer();
 
 }
