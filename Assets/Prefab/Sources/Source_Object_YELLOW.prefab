@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: -4654110424380691058}
   m_Layer: 0
   m_Name: Source_Object_YELLOW
-  m_TagString: Powerup
+  m_TagString: Yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

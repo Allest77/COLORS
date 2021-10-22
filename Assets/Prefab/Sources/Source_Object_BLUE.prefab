@@ -741,9 +741,10 @@ GameObject:
   - component: {fileID: 423019485124876146}
   - component: {fileID: 2466330694595322808}
   - component: {fileID: 4529712566720183346}
+  - component: {fileID: 650396351565061744}
   m_Layer: 0
   m_Name: Source_Object_BLUE
-  m_TagString: Powerup
+  m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -846,6 +847,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.014142135, y: 0.01, z: 0.014142135}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &650396351565061744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4123844542410556013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e1fe1ae2278034eb71cc4acdc6fb3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  powerUps: []
+  currentPowerUp: {fileID: 0}
+  pickupEffect: {fileID: 0}
+  jumpMultiplier: 1.4
 --- !u!1 &4269944000753965495
 GameObject:
   m_ObjectHideFlags: 0

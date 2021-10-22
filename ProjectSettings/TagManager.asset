@@ -13,6 +13,7 @@ TagManager:
   - Blue
   - Yellow
   - Grey
+  - BLUE BLOCK
   layers:
   - Default
   - TransparentFX
