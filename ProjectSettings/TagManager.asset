@@ -8,6 +8,11 @@ TagManager:
   - White
   - Powerup
   - Wall
+  - Red
+  - Pink
+  - Blue
+  - Yellow
+  - Grey
   layers:
   - Default
   - TransparentFX
