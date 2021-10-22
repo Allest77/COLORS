@@ -16,7 +16,7 @@ public class Source : MonoBehaviour
     private void Awake() //Awake happens before start.
     {
         player = GameObject.FindObjectOfType<PlayerController>(); //public variable player is a short name to access playercontroller script.
-        blueBlock = FindGameObjectWithTag("BLUE BLOCK").GetComponent<BoxCollider>(); //We need to find the solid blue obj's collider.
+        //blueBlock = FindGameObjectWithTag("BLUE BLOCK").GetComponent<BoxCollider>(); //We need to find the solid blue obj's collider.
     }
 
     void Update()
