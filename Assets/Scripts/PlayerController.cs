@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //Reference Sound Manager
+    public SoundManager jump;
     public CharacterController controller;
     public float speed = 8f, jumpHeight = 2.66f, jumpForce = 20, gravity = -20.0f, groundDistance = 0.4f, gravityMod = 4;
     public Transform groundCheck;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         gravityNormal = Physics.gravity;
         gravityFast = gravityNormal * gravityMod;
+        jump = GameObject.FindObjectOfType<SoundManager>();
     }
 
     void Update()
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             direction.y = (jumpHeight * jumpForce);
+            SoundManager.PlaySound("jump");
         }
         else
         {
