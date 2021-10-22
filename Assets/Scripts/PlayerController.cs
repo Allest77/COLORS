@@ -14,12 +14,12 @@ public class PlayerController : MonoBehaviour
     public int points = 0;
     public Text coins;
     public bool isGrounded = true, hasDoubleJump, hasBlue, hasYellow, hasWhite;
-    public GameObject powerupIndicator;
+    //public GameObject powerupIndicator;
     private Vector3 direction, gravityNormal, gravityFast;
     public List<GameObject> listOfPowerups;
 
     public Text timer;
-    private TimerController time;
+    //private TimerController time;
 
     Rigidbody rb;
 
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         gravityFast = gravityNormal * gravityMod;
         jump = GameObject.FindObjectOfType<SoundManager>();
         originalJumpHeight = jumpHeight;
-        time = timer.GetComponent<TimerController>();
+        //time = timer.GetComponent<TimerController>();
     }
 
     void Update()
@@ -80,7 +80,6 @@ public class PlayerController : MonoBehaviour
     //Obtain Power Up
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered!");
 
         if (other.gameObject.CompareTag("Pink"))
         {
@@ -88,7 +87,7 @@ public class PlayerController : MonoBehaviour
             hasDoubleJump = true;
             jumpHeight = 6;
             hasYellow = false;
-            powerupIndicator.SetActive(true);
+            //powerupIndicator.SetActive(true);
             Debug.Log("Entered Pink!");
         }
 
@@ -96,7 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             hasBlue = true;
-            powerupIndicator.SetActive(true);
+            //powerupIndicator.SetActive(true);
             jumpHeight = originalJumpHeight;
             Debug.Log(jumpHeight);
         }
@@ -105,7 +104,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             hasYellow = true;
-            powerupIndicator.SetActive(true);
+            //powerupIndicator.SetActive(true);
             jumpHeight = originalJumpHeight;
             Debug.Log(jumpHeight);
         }
@@ -114,7 +113,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             hasWhite = true;
-            powerupIndicator.SetActive(true);
+            //powerupIndicator.SetActive(true);
             jumpHeight = originalJumpHeight;
         }
     }

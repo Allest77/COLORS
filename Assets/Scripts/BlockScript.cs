@@ -32,7 +32,7 @@ public class BlockScript : MonoBehaviour
     {
         if (player.hasBlue)
         {
-            blueBlock.isTrigger = false;
+            blueBlock.isTrigger = true;
             player.hasDoubleJump = false;
             player.hasYellow = false;
             player.hasWhite = false;
