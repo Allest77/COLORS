@@ -28,16 +28,16 @@ public class Source : MonoBehaviour
             player.hasYellow = false;
             player.hasWhite = false;
             //place functionality here:
-            player.jumpHeight = player.jumpHeight * jumpMultiplier;
+            player.jumpHeight = 6;
         }
+
         if (player.hasBlue)
         {
             player.hasDoubleJump = false;
             player.hasYellow = false;
             player.hasWhite = false;
-            //place functionality here: Overwrite WOTever current power up you have.
-                //If the player obtains a blue source, the seethrough blue blocks turn into solid blue blocks, OTHERWISE (else) - use see through blocks.
         }
+
         if (player.hasYellow)
         {
             player.hasDoubleJump = false;
@@ -45,6 +45,7 @@ public class Source : MonoBehaviour
             player.hasWhite = false;
             //place functionality here:
         }
+
         if (player.hasWhite)
         {
             player.hasDoubleJump = false;

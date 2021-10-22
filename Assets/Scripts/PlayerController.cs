@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             if (gameObject.CompareTag("Red"))
             {
+                isGrounded = true;
                 jumpHeight = 0;
                 jumpForce = 0;
             }

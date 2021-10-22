@@ -863,6 +863,7 @@ MonoBehaviour:
   powerUps: []
   currentPowerUp: {fileID: 0}
   pickupEffect: {fileID: 0}
+  blueBlock: {fileID: 0}
   jumpMultiplier: 1.4
 --- !u!1 &4269944000753965495
 GameObject:
